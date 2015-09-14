@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Colorado TopoMap</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+<div class="container" >
+
+
+	<img class="map" src= "/Users/student/projects/GoldRush/topo-co.jpg" ng-click="addMarker($event)">
+
+	<div class="markerClass" ng-repeat="marker in markers" style="top:{{marker.yposition}}px; left:{{marker.xposition}}px" ng-click="removeMarker($index)" ng-mouseenter="togleComment($index)" ng-mouseleave="togleComment($index)">
+	<p>X</p>
+	<p ng-show="marker.commentVisibility">{{marker.comment}}</p>
+	</div>
+
+	
+	<script src="main.js"></script>
+</div>
+</body>
+</html>
+
+
